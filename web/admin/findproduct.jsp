@@ -19,7 +19,7 @@
 
 if (username == null) {
 %>
-    <jsp:forward page="login.html" />
+    <jsp:forward page="login.jsp" />
 <%}%>
 
 
@@ -37,8 +37,38 @@ if (username == null) {
 
 <script>
 
+function updateproduct (productId){                      
+        opener.updateproduct(
+                             document.getElementById("id_"+productId).innerHTML,
+                             document.getElementById("name_"+productId).innerHTML ,
+                             document.getElementById("desc_"+productId).innerHTML,
+                             document.getElementById("image_"+productId).innerHTML,
+                             document.getElementById("catid_"+productId).innerHTML,
+                             document.getElementById("catname_"+productId).innerHTML,
+                             document.getElementById("price_"+productId).innerHTML,
+                             document.getElementById("new_"+productId).innerHTML);
+                             
+        this.close();
+
+}
 
 
+
+function removeproduct (productId){        
+        
+        opener.removeproduct(
+                             document.getElementById("id_"+productId).innerHTML,
+                             document.getElementById("name_"+productId).innerHTML ,
+                             document.getElementById("desc_"+productId).innerHTML,
+                             document.getElementById("image_"+productId).innerHTML,
+                             document.getElementById("catid_"+productId).innerHTML,
+                             document.getElementById("catname_"+productId).innerHTML,
+                             document.getElementById("price_"+productId).innerHTML,
+                             document.getElementById("new_"+productId).innerHTML);
+
+        this.close();
+
+}
 </script>
 
 </head>
@@ -106,7 +136,7 @@ if (username == null) {
                 	<div class="experttag_post_top">
                     	<h1>search result</h1>
                     </div>
-                    <div class="experttag_post_mid" style="height:270px;">
+                    <div class="experttag_post_mid" style="height:270px;overflow : auto; ">
                         <table>
                             <tr>
                                 <td style="background-color:gray">Sr.</td>
@@ -126,8 +156,17 @@ if (username == null) {
                                 <td><%=product.getProductId() %></td>
                                 <td><%= StringHelper.truncatString(product.getProductName(),30) %></td>
                                 <td><%= StringHelper.truncatString(product.getProductDescription(),30) %></td>
-                                <td><a href="javascript:update()">update</a></td>
-                                <td><a href="javascript:add()">edit</a></td>
+                                <td><a href="javascript:updateproduct('<%=product.getProductId() %>')">Update</a></td>
+                                <td><a href="javascript:removeproduct('<%=product.getProductId() %>')">Delete</a></td>
+                                
+                                <div style="display:none" id="id_<%=product.getProductId() %>" ><%=product.getProductId() %></div>
+                                <div style="display:none" id="name_<%=product.getProductId() %>" ><%=product.getProductName() %></div>
+                                <div style="display:none" id="desc_<%=product.getProductId() %>" ><%=product.getProductDescription() %></div>
+                                <div style="display:none" id="image_<%=product.getProductId() %>" ><%=product.getProductImage() %></div>
+                                <div style="display:none" id="catid_<%=product.getProductId() %>" ><%=product.getProdCategoryId() %></div>
+                                <div style="display:none" id="catname_<%=product.getProductId() %>" ><%=product.getProdCategoryName() %></div>
+                                <div style="display:none" id="price_<%=product.getProductId() %>" ><%=product.getProductPrice() %></div>
+                                <div style="display:none" id="new_<%=product.getProductId() %>" ><%=product.isNewArrivalInd() %></div>
                             </tr>
                             <%}%>
 

@@ -447,3 +447,13 @@ span.post{
 	color: #fff;
     vertical-align:middle;
 }
+
+
+
+
+.deleteproduct tr td span , .addprofile tr td span{
+    font-size: 12px;
+	color:#ccff00;
+    margin-bottom:20px;
+    }
+}

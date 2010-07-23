@@ -1,4 +1,7 @@
+<%@page import="com.noble.admin.utility.StringHelper" %>
+
 <%
+String baseUrl = StringHelper.getBaseUrl(request);
 String item = request.getParameter("item");
 
 if(item==null) item="admin";
@@ -27,11 +30,11 @@ if(item==null) item="admin";
     			<div id="experttag_menu_section">
 
             		<ul>
-                        <li><a href="profile.jsp" <%= item.equalsIgnoreCase("profile")?"class='current'":"" %> >Profile</a></li>
-        		        <li><a href="admin.jsp" <%= item.equalsIgnoreCase("admin")?"class='current'":"" %> >Products</a></li>
-		                <li><a href="category.jsp" <%= item.equalsIgnoreCase("category")?"class='current'":"" %> >Categories</a></li>
-        		        <li><a href="pricerange.jsp" <%= item.equalsIgnoreCase("pricerange")?"class='current'":"" %> >Price Range</a></li>
-                		<li><a href="contact.jsp" <%= item.equalsIgnoreCase("contact")?"class='current'":"" %> >Contact</a></li>
+                        <li><a href="<%=baseUrl%>admin/profile.jsp" <%= item.equalsIgnoreCase("profile")?"class='current'":"" %> >Profile</a></li>
+        		        <li><a href="<%=baseUrl%>admin/admin.jsp" <%= item.equalsIgnoreCase("admin")?"class='current'":"" %> >Products</a></li>
+		                <li><a href="<%=baseUrl%>admin/category.jsp" <%= item.equalsIgnoreCase("category")?"class='current'":"" %> >Categories</a></li>
+        		        <li><a href="<%=baseUrl%>admin/pricerange.jsp" <%= item.equalsIgnoreCase("pricerange")?"class='current'":"" %> >Price Range</a></li>                		
+                        <li><a href="<%=baseUrl%>AdminLogin.do?method=logout"  >logout</a></li>
 		            </ul>
 
 				</div>

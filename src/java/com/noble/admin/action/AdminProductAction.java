@@ -115,7 +115,7 @@ public class AdminProductAction extends DispatchAction {
         
         //add product to database
         products = ProductDAO.getProducts(database,
-                product.getProductId(),
+                0,
                 product.getProductname(),
                 product.getProductdescription(),
                 product.getProdCategoryId());

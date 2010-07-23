@@ -50,8 +50,8 @@ public class PriceRangeDAO {
             while (rs.next()) {
 
                 range = new IntPair();
-                range.setId(ParseData.parseInt(rs.getString(1)));
-                range.setId(ParseData.parseInt(rs.getString(2)));
+                range.setId(ParseData.parseInt(rs.getString("rangeId")));
+                range.setValue(ParseData.parseInt(rs.getString("rangevalue")));
 
                 priceranges.add(range); 
 

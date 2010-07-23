@@ -65,7 +65,7 @@ public class ProductDAO {
                   sql.append(" prodCategoryId =").append(prodCategoryId)
                      .append(" where prodId=").append(productId)     ;
                           
-
+                //log.info("updateProduct : " + sql.toString());
                 db.connect();
                 db.updateQuery(sql.toString());
     }
@@ -84,7 +84,8 @@ public class ProductDAO {
             sql.append("SELECT prod.prodId,prod.prodName,prod.prodDescription,prod.productPrice,prod.prodCategoryId, ")
                 .append("prod.productImage,prod.newArrivalInd,cat.prodCategoryName ")
                 .append(" FROM products prod Inner Join category cat ON prod.prodCategoryId = cat.prodCategoryId ")
-                .append(condition==null?"":condition);
+                .append(condition==null?"":condition)
+                .append(" order by prod.prodId "); 
  
             db.connect();
             ResultSet rs = db.selectQuery(sql.toString()); 
@@ -102,7 +103,7 @@ public class ProductDAO {
                 product.setProductDescription(ParseData.parseString(rs.getString("prodDescription")));
                 product.setProductImage(ParseData.parseString(rs.getString("productImage")));
                 product.setProdCategoryName(ParseData.parseString(rs.getString("prodCategoryName")));
-                System.out.println(product.getProductId());
+                //System.out.println(product.getProductId());
                 products.add(product);
 
             }
@@ -124,7 +125,8 @@ public class ProductDAO {
       return getProducts(db, " where productId=" + productId);
     }
 
-    
+
+
     public static ArrayList getProducts(DBConnection db, int productId , String productName, String productDescription, int productCategory){
 
       StringBuffer sql = new StringBuffer();
