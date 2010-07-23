@@ -1,0 +1,8 @@
+body {margin: 0; padding: 0; background-image: url('bg.jpg'); }
+#imSite {width: 985px; margin: 15px auto; text-align: left; }
+#imHeader {height: 180px; background-image: url('top.jpg'); background-repeat: no-repeat; background-position: left top; }
+#imBody {background-image: url('content.jpg'); background-repeat: repeat-y; background-position: left top; }
+#imMenuMain {width: 134px; float: left; padding: 11px 0 0 39px; }
+#imContent {width: 772px; float: left; margin-top: 1px; }
+#imFooter {clear: both; height: 79px; background-image: url('bottom.jpg'); background-repeat: no-repeat; background-position: left top; }
+

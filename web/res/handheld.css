@@ -1,0 +1,137 @@
+body {
+margin: 0;
+padding: 5px;
+background-color: #e6e6fa;
+font: 10pt Tahoma;
+background-image: none;
+}
+#imSite {
+width: auto;
+text-align: left;
+}
+#imHeader {
+height: auto;
+margin: 5px 0;
+padding: 0 5px;
+border-bottom: 1px #6b6b6b solid;
+background-image: none;
+background-color: #000066;
+}
+#imBody {
+background-image: none;
+}
+#imMenuMain {
+height: auto;
+padding: 0;
+margin-bottom: 10px;
+background-image: none;
+}
+#imContent {
+padding: 5px 0 5px 0;
+border-top: 1px #6b6b6b solid;
+}
+#imPage {
+height: auto !important; height: auto;
+padding-bottom: 10px;
+}
+#imFooter {
+height: auto;
+margin: 5px 0;
+padding: 5px 0;
+border-top: 1px #6b6b6b solid;
+border-bottom: 1px #6b6b6b solid;
+background-image: none;
+background-color: #d0d5e8;
+color: #000000;
+}
+#imFooter_L {
+margin: 0;
+float: left;
+font: 10pt Tahoma;
+}
+#imFooter_R {
+margin: 0;
+float: right;
+font: 10pt Tahoma;
+}
+
+/* -- Texts Style -- */
+h1 {
+position: static;
+margin: 0;
+font-size: 150%;
+line-height: 200%;
+color: #ffffcc;
+}
+h2 {
+margin: 0;
+font-size: 125%;
+color: #330099;
+}
+#imPathTitle {
+margin: 0;
+font-size: 85%;
+color: #7b7b7b;
+}
+#imFooterSiteMap {
+display: none;
+}
+p {
+margin: 5px 0 0 0;
+padding: 0;
+}
+ul {
+margin: 5px 0 0 20px;
+padding: 0;
+}
+hr {
+display: none;
+}
+
+/* Page Style */
+#imPage div {
+position: static;
+width: auto;
+height: auto;
+margin: 5px 0 0 0;
+text-align: left;
+}
+
+/* Styles */
+.imInvisible {position: static;}
+.imHidden {display: inline;}
+
+/* -- Menu Main Settings -- */
+#imMnMn {padding-top: 8px; }
+#imMnMn ul, #imMnMn ul li {margin: 0 0 0 10px; padding: 0; list-style: disc; cursor: pointer; }
+#imMnMn ul li {position: static; float: none; margin-right: 0; padding-right: 0; }
+#imMnMn ul a {display: inline; text-decoration: none; width: auto; padding: 0; height: auto !important; font: 10pt Tahoma; color: #000000; float: none !important; }
+
+/* -- Menu Main Hover Settings -- */
+#imMnMn ul a:hover, #imMnMn ul li:hover a, #imMnMn ul li.iehover a {color: #000000; }
+
+/* -- Menu Main Images -- */
+#imMnMn a.imMnLv {background-image: none;}
+
+/* -- Menu Level -- */
+#imMnMn ul ul {display: list-item; position: static; list-style: circle;}
+#imMnMn ul ul li {float: none !important; display: list-item !important; list-style: circle;}
+#imMnMn ul li:hover li a, #imMnMn ul li.iehover li a, #imMnMn ul li:hover li:hover li a, #imMnMn ul li.iehover li.iehover li a, #imMnMn ul li:hover li:hover li:hover li a, #imMnMn ul li.iehover li.iehover li.iehover li a {padding: 0; height: auto !important; font: 10pt Tahoma; background-color: transparent; color: #000000; border: none; width: auto; float: none !important; margin-bottom: 0 !important; }
+#imMnMn ul li li {padding: 0; margin: 0; }
+#imMnMn ul li:hover li a:hover, #imMnMn ul li:hover li:hover a, #imMnMn ul li.iehover li a:hover, #imMnMn ul li.iehover li.iehover a, #imMnMn ul li:hover li:hover li a:hover, #imMnMn ul li:hover li:hover li:hover a, #imMnMn ul li.iehover li.iehover li a:hover, #imMnMn ul li.iehover li.iehover li.iehover a, #imMnMn ul li:hover li:hover li:hover li a:hover, #imMnMn ul li.iehover li.iehover li.iehover li a:hover {background-color: #000000; color: #FFFFFF; }
+#imMnMn ul li:hover ul ul, #imMnMn ul li:hover ul ul ul, #imMnMn ul li.iehover ul ul, #imMnMn ul li.iehover ul ul ul {display: list-item;}
+#imMnMn ul li:hover ul, #imMnMn ul ul li:hover ul, #imMnMn ul ul ul li:hover ul, #imMnMn ul li.iehover ul, #imMnMn ul ul li.iehover ul, #imMnMn ul ul ul li.iehover ul {display: list-item;}
+
+/* -- Menu Sub -- */
+#imPageSub {
+width: auto;
+float: none;
+background-image: none;
+}
+#imMenuSub {
+display: none;
+}
+
+#imHeader div {
+display: none;
+}

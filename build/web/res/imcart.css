@@ -1,0 +1,31 @@
+#imCartText {padding: 0; text-align: left; margin: 20px 0 0 10px; min-height: 320px; height: auto !important; height: 320px; font: 11px Tahoma; color: #000000; }
+#imCartText table {margin: 15px auto; border-collapse: collapse; width: 90%; }
+#imCartText th {font-weight: bold; padding: 3px; border-collapse: collapse; border: 1px solid #808080; background-color: #C0C0C0; color: #000000; text-align: left; }
+#imCartText td {padding: 3px; border-collapse: collapse; border: 1px solid #808080; color: #000000; text-align: left; }
+#imCartText .imField {border: 1px solid #AAAAAA; padding: 1px; font: 11px Tahoma; }
+#imCartText .imField_Label {background-color: #EEEEEE; }
+#imCartText .imQtyField {border: 1px solid #AAAAAA; text-align: right; font: 11px Tahoma; }
+#imCartText .imOptField {border: 1px solid #AAAAAA; text-align: left; font: 11px Tahoma; width: 90%; }
+#imCartText .imName {width: 30%; }
+#imCartText .imDescr {width: 40%; }
+#imCartText .imOpt {width: 20%; text-align: center; }
+#imCartText .imPrice {width: 15%; text-align: right; white-space: nowrap; }
+#imCartText .imQty {width: 10%; text-align: center; }
+#imCartText .imCmd {width: 5%; text-align: center; }
+#imCartText .imCartButton {margin: 5px 0 0 8px; padding: 1px; border: 1px solid #808080; text-align: center; background-color: #C0C0C0; color: #000000; font: 11px Tahoma; }
+#imCartText .imCmd img {cursor: pointer; }
+form.imShipment {margin: 0; position: relative; }
+.imShipItem {padding: 0 0 0 25px; margin: 0 0 8px 0; }
+.imShipItem input {position: absolute; left: 0; }
+#imOrderID {width: 60%; margin: 15px auto; padding: 10px; text-align: center; font-size: 115%; border: dashed 1px #111111; }
+form.imUserData {margin: 8px auto; padding: 0; text-align: left; width: 80%; }
+form fieldset {margin: 0; padding: 0; border: none; }
+form.imUserData div {float: left; width: 100%; padding-top: 5px; }
+.imLabel {margin: 2px 5px 0 0; padding: 0; float: left; width: 25%; text-align: right; }
+.imLabel_Cont {float: left; width: 70%; }
+.imInput_0 {width: 80%; }
+.imInput_1 {width: 65%; }
+.imInput_2 {width: 45%; }
+.imInput_3 {width: 25%; }
+#imAgreePanel {border-top: 1px solid #AAAAAA; margin-top: 7px; }
+

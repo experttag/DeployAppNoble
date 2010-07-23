@@ -1,0 +1,10 @@
+#imCel8_00 {position: absolute; top: 0px; left: 10px; height: 305px; width: 756px; }
+#imObj8_00 form {margin: 0; padding: 0; text-align: left; width: 360px; font: 11px Tahoma; color: #000000; line-height: 15px; }
+#imObj8_00 .imInput {font: 11px Tahoma; color: #000000; line-height: 15px; border: 1px solid #AAAAAA; background-color: #FFFFFF; }
+#imObj8_00 #imAgreePanel {border-top: 1px solid #C0C0C0; margin-top: 7px; }
+#imObj8_00 .imFormButton {font: 11px Tahoma; color:#000000; border: 1px solid #000000; background-color:#C0C0C0; margin: 3px 0 7px 0; }
+#imObj8_00 {padding: 0px; }
+#imCel8_00_Cont {text-align: center; height: 305px; overflow: hidden; }
+#imCel8_00 form {margin: 0 auto; }
+#imPage {position: relative; height: 360px; }
+

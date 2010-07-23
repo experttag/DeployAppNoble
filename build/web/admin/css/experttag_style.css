@@ -1,0 +1,449 @@
+/*
+
+CSS Credit: http://www.templatemo.com/
+
+*/
+
+html {
+
+	background: #333333;
+
+}
+
+body {
+
+	margin: 0;
+
+	padding:0;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	font-size: 12px;
+
+	line-height: 1.5em;
+
+	color: #333333;
+
+	width: 100%;
+
+	display: table;
+
+}
+
+a { color: #CCFF00; }
+a:hover { color: #FFFFFF; }
+
+#experttag_background_section_top {
+
+	width: 100%;
+	
+	height:217px;
+	
+	background: url(../images/experttag_background_section_top_bg.jpg) repeat-x;
+
+}
+
+#experttag_background_section_middle {
+
+	width: 100%;
+	
+	background: #333333;
+	
+	clear: both;
+	
+	overflow:hidden;
+
+}
+
+#experttag_background_section_bottom {
+
+	width: 100%;
+	
+	height: 327px;
+
+	background: url(../images/experttag_background_section_bottom_bg2.jpg) repeat;
+	
+	float: left;
+
+}
+
+.experttag_container {
+
+	width: 960px;
+
+	margin: auto;
+
+}
+
+#experttag_header {
+
+	width: 100%;
+	height:168px;	
+	background:url(../images/experttag_header_bg.jpg) repeat-x;
+
+}
+
+/* Logo Area */
+#experttag_logo_section {
+
+	width:auto;
+	height:auto;
+	margin-top:60px;
+	margin-left: 60px;
+	float:left;	
+	display: inline;
+}
+
+
+#experttag_logo_section h1 {
+	
+	padding-top: 10px;
+	font-size: 42px;
+	color:#999999;
+	margin:0px;
+	font-weight: normal;
+		
+}
+
+#experttag_logo_section h2{
+	
+	font-size:18px;
+	color:#999999;
+	padding-top:5px;
+	font-weight: normal;
+	
+}
+/* End Of Logo Area*/
+/* Search Box*/
+
+#experttag_search_box{
+	width: 338px;
+	height: 52px;
+	float: right;
+	margin-top: 90px;
+	margin-right: 20px;
+	background:url(../images/experttag_search_box_bg.jpg) no-repeat;
+}
+
+.textfield{
+	width: 500px;
+	height: 18px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	background: #000;
+	color: #FFF;
+	border: solid 1px #3b3b3b;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.optionfield{
+	width: 30px;
+	height: 18px;
+	margin-right:20px;
+	margin-left: 10px;
+	background: #000;
+	color: #FFF;
+	border: solid 1px #3b3b3b;
+}
+
+.buttonfield{
+	height:25px;
+	width:90px;
+	background:gray;
+	margin-bottom: 15px;
+	margin-left: 10px;	
+	color: #FFF;
+	border: solid 1px #3b3b3b;
+	padding-top: 3px;
+	padding-left: 5px;
+}
+
+
+
+#button{
+	background: url(../images/experttag_button.jpg); 
+	border: none;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	height: 25px;
+	margin-left: 10px;
+	padding: 0 5px;
+	text-align: center;
+	vertical-align: bottom;
+	white-space: pre;
+	width: 80px;
+	color: #fff;
+}
+
+/* End Of Search Box*/
+/* Menu Section */
+
+#experttag_menu_panel{
+	width:100%;
+	height: 49px;	
+	margin: 0 auto;
+	background: url(../images/experttag_menu_bg.jpg) repeat-x;
+	float:left;
+}
+
+#experttag_menu_panel #experttag_menu_section{
+	width: 930px;
+	height: 49px;	
+	margin:0 auto;
+	padding: 0 0 0 30px;
+	color: #03a0a6;
+}
+
+#experttag_menu_section ul {
+	float: left;
+	width: 930px;
+	margin: 0;
+	padding-top: 4px;
+	list-style: none;
+}
+
+#experttag_menu_section ul li{
+	display: inline;
+}
+
+#experttag_menu_section ul li a{
+	float: left;
+	width: 110px;
+	padding-top: 8px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#experttag_menu_section li a:hover, #experttag_menu_section li .current{
+	color: #ccff00;
+	height:36px;
+	background:url(../images/experttag_menu_current.jpg) repeat-x;
+}
+
+/* End Of Menu */
+
+/* Left Section */
+
+#experttag_left_section {
+	
+	width: 560px;
+	float: left;
+	margin: 10px 0px 10px 35px;
+	
+}
+
+* html #experttag_left_section {
+
+	margin-left: 15px;
+}
+
+.experttag_post {
+	
+	width: 552px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	
+}
+
+.experttag_post_top {
+	
+	width: 551px;
+	height: 47px;
+	background: url(../images/experttag_post_top.jpg) no-repeat;
+	
+}
+
+* html .experttag_post_top h1{
+	margin-bottom: -11px;
+}
+
+.experttag_post_top h1{
+	font-size: 18px;
+	color:#ccff00;
+	font-weight:bold;
+	padding-top: 15px;
+	padding-left: 25px;
+}
+
+.experttag_post_mid {
+	
+	width: 551px;
+	background: url(../images/experttag_post_middle.jpg) repeat-y;
+
+}
+
+.experttag_post_bottom {
+	
+	width: 551px;
+	height: 39px;
+	background: url(../images/experttag_post_bottom.jpg) no-repeat;
+	
+}
+
+
+.experttag_post_mid p ,.experttag_post_mid table tr td{
+	
+	font-size: 12px;
+	color:#fff;
+	margin : 0px 25px 25px 25px;
+	text-align: justify;
+
+}
+
+.experttag_post_mid table {
+   width:90%;
+   margin-left:20px;
+}
+
+span.post{
+	margin: 25px;
+	color: #999999;
+	font-size: 11px;
+	
+}
+
+
+
+/* End Of Left Section */
+/* Right Section */
+#experttag_right_section {
+	
+	width: 310px;
+	float: right;
+	margin: 10px 30px 10px 0px;
+	
+}
+
+* html #experttag_right_section {
+
+	margin-right: 15px;
+}
+
+.experttag_section_box {
+	
+	width: 292px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+
+	
+}
+
+
+
+.experttag_section_box_top {
+	
+	width: 292px;
+	height: 41px;
+	background: url(../images/experttag_section_box_top.jpg) no-repeat;
+
+}
+
+* html .experttag_section_box_top {
+	margin-bottom: -11px;
+}
+
+.experttag_section_box_top h1{
+	font-size: 18px;
+	color:#999999;
+	font-weight:bold;
+	padding-top: 15px;
+	padding-left: 15px;
+
+}
+
+.experttag_section_box_mid {
+	
+	width: 292px;
+	background: url(../images/experttag_section_box_middle.jpg) repeat-y;
+}
+
+
+.experttag_section_box_mid p{
+	
+	font-size: 12px;
+	color:#fff;
+	margin : 0px 15px 15px 15px;
+	text-align: justify;
+
+}
+
+.experttag_section_box_mid p a{
+	
+	font-size: 12px;
+	color:#ccff00;
+
+}
+
+.experttag_section_box_mid img{
+	float: left;
+	display:inline;
+	margin-bottom: 10px;
+	margin-left: 13px;
+	border:none;
+
+}
+
+.experttag_section_box_mid ul{
+	
+	margin-bottom:15px;
+	margin-top:0px;
+	padding-right:15px;
+	color: #fff;
+}
+
+.experttag_section_box_bottom {
+	
+	width: 292px;
+	height: 28px;
+	background: url(../images/experttag_section_box_bottom.jpg) no-repeat;
+	margin-top: -15px;
+
+
+}
+
+
+/* End Of Right Section*/
+
+.clear{
+	clear:both;
+	height:1px;
+}
+
+#experttag_bottom_panel {
+	clear: both;
+	width: 100%;
+	height: 62px;
+	margin: 0 auto;
+	background: url(../images/experttag_background_section_bottom_bg.jpg) repeat-x;	
+}
+
+#experttag_bottom_panel #experttag_bottom_section{
+	width: 960px;
+	margin: 0 auto;
+	height: 62px;
+
+}
+
+
+.body p{
+	
+	text-align: justify;
+	margin: 10px;
+	padding: 0px;
+	color: #fff;
+}
+
+#experttag_bottom_section #experttag_footer_section{
+	clear: both;
+	text-align: center;
+	width: 960px;
+	margin-top: 30px; 
+	padding: 30px 0;
+	color: #fff;
+    vertical-align:middle;
+}

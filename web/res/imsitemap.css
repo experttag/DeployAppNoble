@@ -1,0 +1,51 @@
+#imMap {
+margin: 12px 0 12px 12px;
+min-height: 250px;
+height: auto !important;
+height: 250px;
+}
+#imMap ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+#imMap li {
+padding-top: 4px;
+}
+#imMap p {
+margin: 0;
+}
+#imMap a:link, a:visited {
+text-decoration: none;
+}
+#imMap a:hover {
+text-decoration: underline;
+}
+#imMap li.page {
+background: url("impage.gif") no-repeat top left;
+cursor: default;
+}
+#imMap li.imMap_open {
+background: url("imopen.gif") no-repeat top left;
+}
+#imMap li.imMap_closed {
+background: url("imclosed.gif") no-repeat top left;
+}
+#imMap li.imMap_open ul {
+padding-left: 20px;
+}
+#imMap li.imMap_closed ul {
+display: none;
+}
+#imMap .title {
+cursor: pointer;
+padding-left: 20px;
+}
+#imMap li.page .title {
+cursor: default;
+}
+#imMap .description {
+padding-left: 20px;
+font-size: 80%;
+}
+
