@@ -7,7 +7,6 @@
 
 <struts-config>
     <form-beans>
-        <form-bean name="UploadActionForm" type="com.noble.admin.action.UploadActionForm"/>
         <form-bean name="CheckOutActionForm" type="com.noble.action.CheckOutActionForm"/>
         <form-bean name="ProductActionForm" type="com.noble.admin.action.ProductActionForm"/>
     
@@ -18,7 +17,6 @@
     </global-exceptions>
 
     <global-forwards>
-        <forward name="uploadoffer" path="/admin/uploadoffer.jsp"/>
         <forward name="orders" path="/admin/orders.jsp"/>
         <forward name="orderconfirmation" path="/orderconfirmation.jsp"/>
         <forward name="home" path="/index.jsp"/>
@@ -33,7 +31,6 @@
     </global-forwards>
 
     <action-mappings>
-        <action parameter="method" path="/AdminUpload" scope="session" name="UploadActionForm" type="com.noble.admin.action.AdminUploadAction"/>
         <action parameter="method" path="/AdminOrder" type="com.noble.admin.action.AdminOrderAction"/>
         <action parameter="method" path="/AdminOrder" type="com.noble.admin.action.AdminOrderAction"/>
         <action input="/" name="CheckOutActionForm" path="/Checkout" scope="session" type="com.noble.action.CheckoutAction"/>
