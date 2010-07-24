@@ -22,7 +22,7 @@ import org.apache.struts.action.ActionForward;
  */
 public class AdminRangeAction extends DispatchAction {
     
-    private static DBConnection database = new DBConnection();
+    private  DBConnection database = null;
     private static Logger log = Logger.getLogger(AdminRangeAction.class);
 
 
@@ -30,11 +30,14 @@ public class AdminRangeAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         log.info("addcategory");
+        database = new DBConnection();
 
         String rangevalue = request.getParameter("rangevalue");
         PriceRangeDAO.addRange(database, rangevalue);
         request.getSession().setAttribute("priceranges", PriceRangeDAO.getRange(database));
         request.getSession().setAttribute("message","range has been added successfully") ;
+
+        database.close();
         return mapping.findForward("adminrange");
     }
 
@@ -43,11 +46,13 @@ public class AdminRangeAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         log.info("deletecategory");
+        database = new DBConnection();
 
         String rangeId = request.getParameter("rangeId");
         PriceRangeDAO.removeRange(database, rangeId);
         request.getSession().setAttribute("priceranges", PriceRangeDAO.getRange(database));
         request.getSession().setAttribute("message","range has been deleted successfully") ;
+        database.close();
         return mapping.findForward("adminrange");
     }
 }

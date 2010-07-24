@@ -33,7 +33,8 @@ if(item==null) item="admin";
                         <li><a href="<%=baseUrl%>admin/profile.jsp" <%= item.equalsIgnoreCase("profile")?"class='current'":"" %> >Profile</a></li>
         		        <li><a href="<%=baseUrl%>admin/admin.jsp" <%= item.equalsIgnoreCase("admin")?"class='current'":"" %> >Products</a></li>
 		                <li><a href="<%=baseUrl%>admin/category.jsp" <%= item.equalsIgnoreCase("category")?"class='current'":"" %> >Categories</a></li>
-        		        <li><a href="<%=baseUrl%>admin/pricerange.jsp" <%= item.equalsIgnoreCase("pricerange")?"class='current'":"" %> >Price Range</a></li>                		
+        		        <li><a href="<%=baseUrl%>admin/pricerange.jsp" <%= item.equalsIgnoreCase("pricerange")?"class='current'":"" %> >Price Range</a></li>
+                        <li><a href="<%=baseUrl%>AdminOrder.do?method=showorders" <%= item.equalsIgnoreCase("orders")?"class='current'":"" %> >Orders</a></li>
                         <li><a href="<%=baseUrl%>AdminLogin.do?method=logout"  >logout</a></li>
 		            </ul>
 

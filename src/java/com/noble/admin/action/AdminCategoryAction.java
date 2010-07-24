@@ -22,7 +22,7 @@ import org.apache.struts.action.ActionForward;
  */
 public class AdminCategoryAction extends DispatchAction {
     
-    private static DBConnection database = new DBConnection();
+    private  DBConnection database = null;
     private static Logger log = Logger.getLogger(AdminCategoryAction.class);
     
    
@@ -30,11 +30,14 @@ public class AdminCategoryAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         log.info("addcategory");
+        database = new DBConnection();
 
         String categoryname = request.getParameter("categoryname");
         CategoryDAO.addCategory(database, categoryname);
         request.getSession().setAttribute("categories", CategoryDAO.getAllCategory(database));
         request.getSession().setAttribute("message","category has been added successfully") ;
+
+        database.close();
         return mapping.findForward("admincategory");
     }
 
@@ -43,11 +46,14 @@ public class AdminCategoryAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         log.info("deletecategory");
+        database = new DBConnection();
 
         String categoryId = request.getParameter("categoryId");
         CategoryDAO.removeCategory(database, categoryId);
         request.getSession().setAttribute("categories", CategoryDAO.getAllCategory(database));
         request.getSession().setAttribute("message","category has been deleted successfully") ;
+
+        database.close();
         return mapping.findForward("admincategory");
     }
 }

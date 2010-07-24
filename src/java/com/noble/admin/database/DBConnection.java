@@ -43,17 +43,20 @@ public class DBConnection{
 	public void connect() {
     	try {
         	conn = DriverManager.getConnection(DBUrl + "?user=" + DBUser + "&password=" + DBPass);
+            //conn = DatabaseManager.getConnection();
         }catch(Exception e){
         log.error("Error while connect :" + e.getMessage());
         }
     }
 	
     public ResultSet selectQuery(String SQLQuery){
-    	this.SQLQuery = SQLQuery;
+    	//this.SQLQuery = SQLQuery;
 
         try {
+            if(conn!=null){
         	stmt = conn.createStatement();
             result = stmt.executeQuery( SQLQuery );
+            }
         }
         catch( Exception e ){
         log.error("Error while selectQuery :" + e.getMessage());
@@ -62,10 +65,12 @@ public class DBConnection{
     }
     
     public void query(String SQLQuery){
-    	this.SQLQuery = SQLQuery;
+    	//this.SQLQuery = SQLQuery;
         try {
+            if(conn!=null){
         	stmt = conn.createStatement();
             stmt.executeQuery( SQLQuery );
+            }
         }
         catch( Exception e ){
         log.error("Error while query :" + e.getMessage());
@@ -73,10 +78,12 @@ public class DBConnection{
     }
 
     public void updateQuery(String SQLQuery){
-    	this.SQLQuery = SQLQuery;
+    	//this.SQLQuery = SQLQuery;
         try {
+            if(conn!=null){
         	stmt = conn.createStatement();
             stmt.executeUpdate( SQLQuery );
+            }
         }
         catch( Exception e ){
         log.error("Error while updatequery :" + e.getMessage());

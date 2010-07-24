@@ -8,6 +8,7 @@ package com.noble.admin.action;
 import com.noble.admin.dao.ProductDAO;
 import com.noble.admin.database.DBConnection;
 import com.noble.admin.utility.FileUpload;
+import com.noble.admin.utility.StringHelper;
 import java.util.ArrayList;
 import java.util.Properties;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +28,7 @@ import org.apache.struts.upload.FormFile;
 public class AdminProductAction extends DispatchAction {
     
    
-    private static DBConnection database = new DBConnection();
+    private  DBConnection database = null;
     private static Logger log = Logger.getLogger(AdminProductAction.class);
     
     public ActionForward addproduct(ActionMapping mapping, ActionForm  form,
@@ -35,6 +36,8 @@ public class AdminProductAction extends DispatchAction {
             throws Exception {
 
         log.info("addproduct");
+        database = new DBConnection();
+
         ProductActionForm product = (ProductActionForm)form;
         FormFile productImage =product.getProductImage();
 
@@ -50,13 +53,16 @@ public class AdminProductAction extends DispatchAction {
          
         //save product image
         if(FileUpload.isValidFile(productImage)&&fileconfig!=null)
-        FileUpload.saveFile(productImage,fileconfig.getProperty("file_root")); 
+        FileUpload.saveFile(productImage, request.getRealPath("/") +"cart/" );
+        //FileUpload.saveFile(productImage,fileconfig.getProperty("file_root"));
+
 
         request.getSession().setAttribute("message","product has been added successfully") ;
 
-
+        database.close();
         return mapping.findForward("admin");
     }
+
 
     
     public ActionForward updateproduct(ActionMapping mapping, ActionForm  form,
@@ -64,6 +70,8 @@ public class AdminProductAction extends DispatchAction {
             throws Exception {
 
         log.info("updateproduct");
+        database = new DBConnection();
+
         ProductActionForm product = (ProductActionForm)form;
         FormFile productImage =product.getProductImage();
 
@@ -81,11 +89,12 @@ public class AdminProductAction extends DispatchAction {
 
         //save product image
         if(FileUpload.isValidFile(productImage)&&fileconfig!=null)
-        FileUpload.saveFile(productImage,fileconfig.getProperty("file_root"));
+        FileUpload.saveFile(productImage, request.getRealPath("/") +"cart/" );
+        //FileUpload.saveFile(productImage,fileconfig.getProperty("file_root"));
 
         request.getSession().setAttribute("message","product has been updated successfully") ;
 
-
+        database.close();
         return mapping.findForward("admin");
         
     }
@@ -96,11 +105,13 @@ public class AdminProductAction extends DispatchAction {
             throws Exception {
 
         log.info("removeproduct");
+        database = new DBConnection();
         String productId = request.getParameter("productId");
         
         ProductDAO.removeProduct(database, productId);
 
         request.getSession().setAttribute("message","product has been removed successfully") ;
+        database.close();
         return mapping.findForward("admin");
     }
 
@@ -110,6 +121,7 @@ public class AdminProductAction extends DispatchAction {
             throws Exception {
 
         log.info("searchproduct");
+        database = new DBConnection();
         ProductActionForm product = (ProductActionForm)form;
         ArrayList products = null;
         
@@ -121,7 +133,7 @@ public class AdminProductAction extends DispatchAction {
                 product.getProdCategoryId());
 
         request.setAttribute("products",products) ;
-
+        database.close();
         return mapping.findForward("findproduct");
     }
 

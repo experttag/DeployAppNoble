@@ -22,7 +22,7 @@ import org.apache.struts.action.ActionForward;
  */
 public class AdminProfileAction extends DispatchAction {
     
-    private static DBConnection database = new DBConnection();
+    private  DBConnection database = null;
     private static Logger log = Logger.getLogger(AdminProfileAction.class);
 
     
@@ -30,14 +30,14 @@ public class AdminProfileAction extends DispatchAction {
     public ActionForward updateprofile(ActionMapping mapping, ActionForm  form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-
+        database = new DBConnection();
         log.info("updateprofile"); 
         String password = request.getParameter("password");
         String username = request.getParameter("username");
 
         UserDAO.updateUser(database, username, password);
         request.getSession().setAttribute("message","profile has been updated successfully") ;
-
+        database.close();
         return mapping.findForward("admin");
     }
 
@@ -47,9 +47,9 @@ public class AdminProfileAction extends DispatchAction {
             throws Exception {
         
         log.info("removeprofile");
-        
+        database = new DBConnection();
 
-        
+        database.close();
         return mapping.findForward("admin");
     }
 }

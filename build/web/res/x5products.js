@@ -38,7 +38,7 @@ var imVAT="0.00";
 var imFormatRight=false;
 var imFormat2Digit=true;
 var imPayMode=0;
-var imShopPage ="index.html";
+var imShopPage ="index.jsp";
 var imPayLink="";
 
 imLocale["Name"] = "Product";

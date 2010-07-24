@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="CheckOutActionForm" type="com.noble.action.CheckOutActionForm"/>
         <form-bean name="ProductActionForm" type="com.noble.admin.action.ProductActionForm"/>
     
     </form-beans>
@@ -16,6 +17,11 @@
     </global-exceptions>
 
     <global-forwards>
+        <forward name="orders" path="/admin/orders.jsp"/>
+        <forward name="orderconfirmation" path="/orderconfirmation.jsp"/>
+        <forward name="home" path="/index.jsp"/>
+        <forward name="productbycategory" path="/productbycategory.jsp"/>
+        <forward name="productbyprice" path="/productbyprice.jsp"/>
         <forward name="adminrange" path="/admin/pricerange.jsp"/>
         <forward name="admincategory" path="/admin/category.jsp"/>
         <forward name="findproduct" path="/admin/findproduct.jsp"/>
@@ -25,6 +31,10 @@
     </global-forwards>
 
     <action-mappings>
+        <action parameter="method" path="/AdminOrder" type="com.noble.admin.action.AdminOrderAction"/>
+        <action parameter="method" path="/AdminOrder" type="com.noble.admin.action.AdminOrderAction"/>
+        <action input="/" name="CheckOutActionForm" path="/Checkout" scope="session" type="com.noble.action.CheckoutAction"/>
+        <action parameter="method" path="/Product" type="com.noble.action.ProductAction"/>
         <action parameter="method" path="/AdminRange" type="com.noble.admin.action.AdminRangeAction"/>
         <action parameter="method" path="/AdminCategory" type="com.noble.admin.action.AdminCategoryAction"/>
         <action parameter="method" path="/AdminProfile" type="com.noble.admin.action.AdminProfileAction"/>

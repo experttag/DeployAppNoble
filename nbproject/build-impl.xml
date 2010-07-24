@@ -521,9 +521,11 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.log4j-1.2.15.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.log4j-1.2.15.jar" todir="${dist.ear.dir}"/>
         <copyfiles files="${file.reference.mail.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.mail.jar" todir="${dist.ear.dir}"/>
         <copyfiles files="${file.reference.mysql-connector-java-5.0.5-bin.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.mysql-connector-java-5.0.5-bin.jar" todir="${dist.ear.dir}"/>
+        <copyfiles files="${file.reference.activation.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.activation.jar" todir="${dist.ear.dir}"/>
+        <copyfiles files="${file.reference.smartpool.jar}" iftldtodir="${build.web.dir}/WEB-INF" manifestproperty="manifest.file.reference.smartpool.jar" todir="${dist.ear.dir}"/>
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Class-Path" value="${manifest.libs.struts.classpath} ${manifest.file.reference.log4j-1.2.15.jar} ${manifest.file.reference.mail.jar} ${manifest.file.reference.mysql-connector-java-5.0.5-bin.jar} "/>
+            <attribute name="Class-Path" value="${manifest.libs.struts.classpath} ${manifest.file.reference.log4j-1.2.15.jar} ${manifest.file.reference.mail.jar} ${manifest.file.reference.mysql-connector-java-5.0.5-bin.jar} ${manifest.file.reference.activation.jar} ${manifest.file.reference.smartpool.jar} "/>
         </manifest>
     </target>
     <target depends="init" name="library-inclusion-in-archive" unless="dist.ear.dir">
@@ -531,6 +533,8 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.log4j-1.2.15.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.mail.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.mysql-connector-java-5.0.5-bin.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.activation.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.smartpool.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist,library-inclusion-in-manifest" name="do-ear-dist">
         <dirname file="${dist.ear.war}" property="dist.jar.dir"/>

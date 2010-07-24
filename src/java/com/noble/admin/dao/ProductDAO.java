@@ -86,7 +86,8 @@ public class ProductDAO {
                 .append(" FROM products prod Inner Join category cat ON prod.prodCategoryId = cat.prodCategoryId ")
                 .append(condition==null?"":condition)
                 .append(" order by prod.prodId "); 
- 
+
+            //System.out.println(" query --->" + sql.toString());
             db.connect();
             ResultSet rs = db.selectQuery(sql.toString()); 
 

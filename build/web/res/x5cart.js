@@ -51,30 +51,33 @@ function imCFormatVal(number) {
 
 //get product
 function imCGetProduct(sCategKey,sProdKey) {
-	for(var i = 0;i < imCProducts.length;i++)
+	/*for(var i = 0;i < imCProducts.length;i++)
 		if(imCProducts[i][0] == sCategKey && imCProducts[i][1] == sProdKey)
-			return imCProducts[i];
-	return null;
+			return imCProducts[i];*/
+    ims = new Array("","",sProdKey,"code" + sCategKey,"0",0);
+
+	return ims;
 }
 
 //add product to cart from link 
-function imCAddProdLink(sInName,sCategKey,sProdKey,sOptKey,iQty) {
+function imCAddProdLink(sInName,sCategKey,sProdKey,sOptKey,iQty) {  
   imTestCookie();
   imCLoad(sInName);
   imCAddProd(sCategKey,sProdKey,sOptKey,iQty,false,false);
-  imOpenLocation("imcart.html");
+  imOpenLocation("imcart.jsp");
 }
 
 //add product to cart
 function imCAddProd(sCategKey,sProdKey,sOptKey,iQty,bUpd,bJump) {
-	var bTrov = false;
+	var bTrov = false;    
 	if(iQty > 0) {
 		var sCart = imGetCookie("imOrder");
 		if(sCart != null && sCart != "") {
 			var aCart = sCart.split("|");
 			for(var i = 0;i < aCart.length && !bTrov;i++){
 				aCartProd = aCart[i].split(":");
-				if(aCartProd[0] == sCategKey && aCartProd[1] == sProdKey && aCartProd[2] == sOptKey) {
+				//if(aCartProd[0] == sCategKey && aCartProd[1] == sProdKey && aCartProd[2] == sOptKey) {
+                if(aCartProd[0] == sCategKey ) {
 					if(bUpd)
 						aCartProd[3] = parseInt(iQty);
 					else
@@ -91,25 +94,28 @@ function imCAddProd(sCategKey,sProdKey,sOptKey,iQty,bUpd,bJump) {
 			sCart = sCategKey + ":" + sProdKey + ":" + sOptKey + ":" + iQty;
 		imSetCookie("imOrder",sCart,imExpireDays);
 		if (bJump)
-			imOpenLocation("imcart.html");
+			imOpenLocation("imcart.jsp");
 	}
 	else if(iQty == 0 && bUpd)
 		imCDelProd(sCategKey,sProdKey,sOptKey);
 	else
 		alert((imLocale["Err_Qty"]!=undefined?imLocale["Err_Qty"]:"Invalid value!"));
 	if(bJump)
-		imOpenLocation("imcart.html");
+		imOpenLocation("imcart.jsp");
 }
 
 //delete a product from cart
-function imCDelProd(sCategKey,sProdKey,sOptKey,bJump) {
+//function imCDelProd(sCategKey,sProdKey,sOptKey,bJump) {
+function imCDelProd(sCategKey,bJump) {
+   
 	var sCart = imGetCookie("imOrder");
 	if(sCart != null && sCart != "") {
 		var aCart = sCart.split("|");
 		sCart = "";
 		for(var i=0;i < aCart.length;i++) {
 			aCartProd = aCart[i].split(":");
-			if(aCartProd[0] != sCategKey || aCartProd[1] != sProdKey || aCartProd[2] != sOptKey) {
+			//if(aCartProd[0] != sCategKey || aCartProd[1] != sProdKey || aCartProd[2] != sOptKey) {
+            if(aCartProd[0] != sCategKey) {
 				if(sCart != "")
 					sCart += "|" + aCart[i];
 				else
@@ -120,7 +126,7 @@ function imCDelProd(sCategKey,sProdKey,sOptKey,bJump) {
 	}
 	if(bJump)
 		window.location.reload();
-		//imOpenLocation("imcart.html");
+		//imOpenLocation("imcart.jsp");
 }
 
 function imCEmptyCart(sInName,bAll){
@@ -136,7 +142,7 @@ function imCEmptyCart(sInName,bAll){
 	}
 	else
 		//window.location.reload();
-		imOpenLocation("imcart.html");
+		imOpenLocation("imcart.jsp");
 }
 
 //Load Data
@@ -191,6 +197,7 @@ function imCShowCateg(sKey) {
 
 //get all cart products
 function imCGetCart(bReport) {
+    
 	imCLoad("");
 	var sBuf = "";
 	var iTotal = 0;
@@ -221,7 +228,7 @@ function imCGetCart(bReport) {
 	else
 		for(i = 0;i < aCart.length;i++){
 			aCartProd = aCart[i].split(":");
-			aProd = imCGetProduct(aCartProd[0],aCartProd[1]);
+			aProd = imCGetProduct(aCartProd[0],aCartProd[1]);            
 			sBuf += "<tr><td class=\"imDescr\">" + aProd[2] + " - " + aProd[3] + "</td>";
 			if(bFound) {
 				sBuf += "<td class=\"imOpt\">";
@@ -240,7 +247,8 @@ function imCGetCart(bReport) {
 			//sBuf += "<td class=\"imPrice\"> "+ imCFormat(aProd[4]*aCartProd[3],false) + "</td>";
 			iTotal += aProd[4]*aCartProd[3];
 			if(!bReport)
-				sBuf += "<td class=\"imCmd\"><img onclick=\"imCDelProd('" + aCartProd[0] + "','" + aCartProd[1] + "','" + aCartProd[2] + "',true);\" src=\"res/imcartdel.gif\" /></td>";
+                sBuf += "<td class=\"imCmd\"><img onclick=\"imCDelProd('" + aCartProd[0] + "',true);\" src=\"res/imcartdel.gif\" /></td>";
+				//sBuf += "<td class=\"imCmd\"><img onclick=\"imCDelProd('" + aCartProd[0] + "','" + aCartProd[1] + "','" + aCartProd[2] + "',true);\" src=\"res/imcartdel.gif\" /></td>";
 			sBuf += "</tr>";
 		}
 	if(!bReport){
@@ -250,7 +258,7 @@ function imCGetCart(bReport) {
 		}
 	}
 	else {
-		iShipmentType = imGetCookie("imShipment");
+		/*iShipmentType = imGetCookie("imShipment");
 		if(iShipmentType == null)
 			iShipmentType = 0;
 		sBuf += "<tr><td colspan=\"" + (bFound ? 4 : 3) + "\">" + imCShipment[iShipmentType][0] + "</td>";
@@ -260,7 +268,7 @@ function imCGetCart(bReport) {
 		if (imVAT != 0) {
       sBuf += "<tr><td colspan=\"" + (bFound ? 4 : 3) + "\" style=\"text-align: right; border: none; \">" + imLocale["TotalVAT"] + " (" + imVAT + "%)" + ":</td>";
       sBuf += "<td style=\"text-align: right; border: none; \"><b>" + imCFormat((iTotal+Number(imCShipment[iShipmentType][2]))*Number(1+imVAT/100),false) + "</b></td></tr>";  		
-		}
+		}*/
 	}
 	sBuf += "</table>";
 	document.write(sBuf); 
@@ -296,7 +304,7 @@ function imCCheckout(){
 			i++;
 		}
 	imSetCookie("imShipment",iShipmentType,imExpireDays);
-	imOpenLocation("imform.html");
+	imOpenLocation("imform.jsp");
 }
 
 //get user info
@@ -336,7 +344,7 @@ function imCSetUserData() {
 				sUserData  += sItem;
 		}
 	imSetCookie("imData",sUserData,imExpireDays);
-	imOpenLocation("imreport.html"); 	
+	imOpenLocation("imreport.jsp");
 }
 
 //get order info
