@@ -82,8 +82,8 @@ function validateaddform(){
 
  function validateremoveform(){
 
-     if(confirm("This action will remove the product details permanently from system. \n Do you want to continue?")=="OK")
-         return true;
+     if(confirm("This action will remove the product details permanently from system. \n Do you want to continue?"))
+        return true;
      else
          return false;
 
@@ -279,7 +279,8 @@ function removeproduct (productId,productname,productdescription , productImage,
                     <div class="experttag_post_bottom">
                     
                     	<span class="post">* special characters are not allowed in input fields</span>
-						<br><span class="post">* filesize must be less than 10 mb</span>
+                        <br><span class="post">* image dimention should  be 500 X 420</span>
+						<br><span class="post">* filesize must be less than 5 mb</span>
                         <br><br>
                     </div>
                     
@@ -356,7 +357,8 @@ function removeproduct (productId,productname,productdescription , productImage,
                     <div class="experttag_post_bottom">
 
                     	<span class="post">* special characters are not allowed in input fields</span>
-						<br><span class="post">* filesize must be less than 10 mb</span>
+                        <br><span class="post">* image dimention should  be 500 X 420</span>
+						<br><span class="post">* filesize must be less than 5 mb</span>
                         <br><br>
                     </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
     <head>
-        <title>Contact us</title>
+        <title>Noble furniture: Contact us</title>
 
         <!-- Contents -->
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -46,29 +46,47 @@
 
                     <!-- Page START -->
                     <h2>Contact us</h2>
-                    <div id="imPage">
+                   <!-- Page START -->
+<div id="imPage">
 
-                        <div id="imCel0_00">
-                            <div id="imCel0_00_Cont">
-                                <div id="imObj0_00">
-                                    <p class="imAlign_center"><span class="ff1 fc0 fs10 ">Noble furnitures<br /><br />1730 Steeles Avenue East<br />Brampton, ON L6T 1A4<br />(905) 790-6790<br /><br />info@noblefurnitures.com<br /></span></p>
-                                </div>
-                            </div>
-                        </div>
+<div id="imCel0_00">
+<div id="imCel0_00_Cont">
+	<div id="imObj0_00">
+<p class="imAlign_center"><span class="ff1 fc0 fs10 ">Noble furniture<br /><br />1730 Steeles Avenue East<br />Brampton, ON L6T 1A4<br />(905) 790-6790<br /><br />info@noblefurniture.com<br /></span></p>
+	</div>
+</div>
+</div>
 
-                        <div id="imCel7_00">
-                            <div id="imCel7_00_Cont">
-                                <div id="imObj7_00">
-                                    <div style="height:410px;width:700px;border:.1em solid orange;">
-                                        <iframe width="650" height="380" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1730+Steeles+Avenue+East+Brampton,+ON+L6T+1A4&amp;ie=UTF8&amp;hq=&amp;hnear=1730+Steeles+Ave+E,+Brampton,+Peel+Regional+Municipality,+Ontario,+Canada&amp;ll=43.706849,-79.693022&amp;spn=0.018614,0.055704&amp;t=p&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1730+Steeles+Avenue+East+Brampton,+ON+L6T+1A4&amp;ie=UTF8&amp;hq=&amp;hnear=1730+Steeles+Ave+E,+Brampton,+Peel+Regional+Municipality,+Ontario,+Canada&amp;ll=43.706849,-79.693022&amp;spn=0.018614,0.055704&amp;t=p&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-                                    </div>
+<div id="imCel0_01">
+<div id="imCel0_01_Cont">
+	<div id="imObj0_01">
+<p class="imAlign_center"><span class="ff1 fc0 fs10 ">Noble Furniture House<br />3090 Mavis Road,<br />Mississauga.<br />L5C 1T8<br /><br />info@noblefurniture.com<br /></span></p>
+	</div>
+</div>
+</div>
 
-                                    <br><br>
-                                </div>
-                            </div>
-                        </div>
+<div id="imCel7_00">
+<div id="imCel7_00_Cont">
+	<div id="imObj7_00">
+<div style="height:300;width:300;border:.1 em solid orange;">
+<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1730+Steeles+Avenue+East+Brampton,+ON+L6T+1A4&amp;ie=UTF8&amp;hq=&amp;hnear=1730+Steeles+Ave+E,+Brampton,+Peel+Regional+Municipality,+Ontario,+Canada&amp;ll=43.706849,-79.693022&amp;spn=0.018614,0.055704&amp;t=p&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1730+Steeles+Avenue+East+Brampton,+ON+L6T+1A4&amp;ie=UTF8&amp;hq=&amp;hnear=1730+Steeles+Ave+E,+Brampton,+Peel+Regional+Municipality,+Ontario,+Canada&amp;ll=43.706849,-79.693022&amp;spn=0.018614,0.055704&amp;t=p&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
 
-                    </div>
+<br><br>
+	</div>
+</div>
+</div>
+
+<div id="imCel7_01">
+<div id="imCel7_01_Cont">
+	<div id="imObj7_01">
+<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=3090+Mavis+Road,+Mississauga,+Ontario+L5C+1T8,+Canada&amp;sll=43.567883,-79.635783&amp;sspn=0.008629,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=3090+Mavis+Rd,+Mississauga,+Peel+Regional+Municipality,+Ontario,+Canada&amp;z=14&amp;ll=43.567883,-79.635783&amp;output=embed"></iframe><br /><small><a href="http://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=3090+Mavis+Road,+Mississauga,+Ontario+L5C+1T8,+Canada&amp;sll=43.567883,-79.635783&amp;sspn=0.008629,0.021136&amp;ie=UTF8&amp;hq=&amp;hnear=3090+Mavis+Rd,+Mississauga,+Peel+Regional+Municipality,+Ontario,+Canada&amp;z=14&amp;ll=43.567883,-79.635783" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+	</div>
+</div>
+</div>
+
+</div>
+<!-- Page END -->
                     <!-- Page END -->
                     <jsp:include page="common/bottommenu.jsp" />
 

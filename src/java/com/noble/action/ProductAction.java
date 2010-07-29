@@ -45,6 +45,7 @@ public class ProductAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
+        log.info("reloadproducts");
 
         database = new DBConnection();
         request.getSession().setAttribute("priceranges", PriceRangeDAO.getRange(database));
@@ -75,15 +76,43 @@ public class ProductAction extends DispatchAction {
         
         log.info("byprice");
         database = new DBConnection();
+
+        //retrieve range from database and see if its valid
         String range = request.getParameter("range");
         if(!ParseData.isValidString(range))  range=null ;
 
-        ArrayList products = ViewProductDAO.getProductbyPrice(database, range);
+        //retrieve categoyy from database and see if its valid
+        String categoryId = request.getParameter("categoryId");
+        //String categoryIdName = request.getParameter("categoryIdName");
+        if(!ParseData.isValidString(categoryId)){
+            categoryId=null ;
+            //categoryIdName="All categories";
+        }
 
-        request.getSession().setAttribute("products", products);
+        //retrieve current category and range from session
+        String currentcategoryId = (String)request.getSession().getAttribute("currentcategoryId");
+        String currentrange = (String)request.getSession().getAttribute("currentrange");
+        //String currentcategory = (String)request.getSession().getAttribute("currentcategory");
+
+        //use current range or category from session if incomming range is null
+        if(range==null)         range = currentrange;
+        if(categoryId==null){ 
+            categoryId = currentcategoryId; 
+            //categoryIdName=currentcategory ;
+        }
+
+
+        ArrayList products = ViewProductDAO.getProduct(database, range,categoryId);
+
+        request.setAttribute("products", products);
+        
+        //request.getSession().setAttribute("priceranges", PriceRangeDAO.getRange(database));
+        //request.getSession().setAttribute("categories", CategoryDAO.getAllCategory(database));
+
+        //request.getSession().setAttribute("currentcategory", categoryIdName);
+        request.getSession().setAttribute("currentcategoryId", categoryId);
         request.getSession().setAttribute("currentrange", range);
 
-        request.getSession().setAttribute("priceranges", PriceRangeDAO.getRange(database));
         database.close();
         return mapping.findForward("productbyprice");
     }
@@ -102,23 +131,7 @@ public class ProductAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-        database = new DBConnection();
-        log.info("bycategory");
-        String categoryId = request.getParameter("categoryId");
-        String categoryIdName = request.getParameter("categoryIdName");
-
-        if(!ParseData.isValidString(categoryId)){
-            categoryId=null ;
-            categoryIdName="All categories";
-        }
-
-        ArrayList products = ViewProductDAO.getProductbyCategory(database, categoryId);
-
-        request.getSession().setAttribute("products", products);
-        request.getSession().setAttribute("currentcategory", categoryIdName);
-
-        request.getSession().setAttribute("categories", CategoryDAO.getAllCategory(database));
-        database.close();
-        return mapping.findForward("productbycategory");
+       return byprice(mapping, form, request, response);
+        
     }
 }

@@ -68,7 +68,7 @@
                                     <label for="Itm_3">
                                         <span class="imLabel">City*:<br class="imHidden" /></span>
                                         <span class="imLabel_Cont">
-                                            <input class="imField imInput_0" type="text" name="imTxtDat" id="Itm3" />
+                                            <input class="imField imInput_0" type="text" name="imTxtDat" id="Itm3" value="Ontario"/>
                                         </span>
                                     </label>
                                 </div>
@@ -76,7 +76,7 @@
                                     <label for="Itm_7">
                                         <span class="imLabel">Country*:<br class="imHidden" /></span>
                                         <span class="imLabel_Cont">
-                                            <input class="imField imInput_1" type="text" name="imTxtDat" id="Itm7" />
+                                            <input class="imField imInput_1" type="text" name="imTxtDat" id="Itm7" value="Canada" />
                                         </span>
                                     </label>
                                 </div>

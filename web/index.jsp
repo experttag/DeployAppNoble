@@ -30,7 +30,7 @@ if((categories==null||priceranges==null)&&session.getAttribute("reloaded")==null
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
     <head>
-        <title>Noble furnitures</title>
+        <title>Noble furniture</title>
 
         <!-- Contents -->
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -135,7 +135,7 @@ if((categories==null||priceranges==null)&&session.getAttribute("reloaded")==null
                             <div id="imCel0_03_Cont">
                                 <div id="imObj0_03">
                                     <p class="imAlign_left"><span class="ff2 fc0 fs16 fb ">Welcome</span><span class="ff2 fc0 fs10 ">
-                                    <br /><br /></span><span class="ff2 fc2 fs10 ">noble furnitures welcome you to unique shopping experience with us.<br /><br />Formally began operations in 1995 , the main purpose of opening the store is to provide our customers affordable and customized furniture as per their taste.<br /></span></p>
+                                    <br /><br /></span><span class="ff2 fc2 fs10 ">noble furniture welcome you to unique shopping experience with us.<br /><br />Formally began operations in 1995 , the main purpose of opening the store is to provide our customers affordable and customized furniture as per their taste.<br /></span></p>
                                     <p class="imAlign_right"><span class="ff2 fc2 fs10 "><a class="ImLink" href="about_us.jsp" title=""> Read more</a></span><span class="ff3 fc0 fs22 fb ">
                                     <br /></span></p>
                                     <p class="imAlign_left"><span class="ff1 fc0 fs10 ">

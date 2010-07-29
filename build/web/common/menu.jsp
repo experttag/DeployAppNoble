@@ -1,5 +1,6 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="com.noble.admin.modal.*" %>
+<%@page import="com.noble.constant.DataConstant" %>
 <%@page import="com.noble.admin.utility.StringHelper" %>
 
 <%
@@ -36,7 +37,7 @@
                             <li><a href="<%=baseUrl %>Product.do?method=bycategory&categoryId=<%=category.getId() %>&categoryIdName=<%=category.getValue()%>" title=""><%=category.getValue()%></a></li>
                             <%}%>
 
-                            <li><a href="<%=baseUrl %>Product.do?method=bycategory" title="">All Categories</a></li>
+                            <li><a href="<%=baseUrl %>Product.do?method=bycategory&categoryId=<%=DataConstant.CATEGORY_ALL %>&categoryIdName=All categories" title="">All Categories</a></li>
 </ul>
 </li>
 	<li><a class="imMnItm_3" href="<%=baseUrl %>Product.do?method=byprice" title=""><span class="imHidden">Products by price range</span></a>
@@ -45,9 +46,9 @@
     <% for(int i=0; i < numRange;i++){
      range = (IntPair)priceranges.get(i);
     %>
-        <li><a href="<%=baseUrl %>Product.do?method=byprice&range=<%=range.getValue()%>" title="">upto <%=range.getValue()%></a></li>
+        <li><a href="<%=baseUrl %>Product.do?method=byprice&range=<%=range.getValue()%>" title="">upto <%=DataConstant.currencySymbol + " "+range.getValue()%></a></li>
     <%}%>
-    <li><a href="<%=baseUrl %>Product.do?method=byprice" title="">All</a></li>
+    <li><a href="<%=baseUrl %>Product.do?method=byprice&range=<%=DataConstant.RANGE_ALL %>" title="">All</a></li>
                             
 </ul>
 </li>

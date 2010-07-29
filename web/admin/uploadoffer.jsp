@@ -39,23 +39,13 @@ if (username == null) {
 
 <script>
 
-function validateupdateprofile(){
+function validateuploadform(){
 	
 			var error="";
 			errorcolor = "#000";
 			normalcolor = "#000";
 		   
-            error=error+ isValidUsername("addprofile","password",errorcolor,normalcolor);
-
-            if(document.forms["addprofile"].elements["password"].value!=document.forms["addprofile"].elements["confirmpassword"].value){
-                error=error+ "\n confirm password do not match password";
-                document.forms["addprofile"].elements["confirmpassword"].focus();
-                document.forms["addprofile"].elements["confirmpassword"].style.background=errorcolor;
-            }
-            else{
-                document.forms["addprofile"].elements["confirmpassword"].style.background=normalcolor;
-            }
-		   
+            error=error+ isValidUsername("addoffer","offerdetail",errorcolor,normalcolor);
 		   		   
 		   if((error!="")) {
 			  alert(error);	  
@@ -88,7 +78,7 @@ function validateupdateprofile(){
                     </div>
                     <div class="experttag_post_mid">
                         <p><%= (session.getAttribute("message"))==null?"":(String)session.getAttribute("message") %></p>
-                        <form id="addproduct" action="<%=baseUrl%>AdminUpload.do" name="addproduct" ENCTYPE="multipart/form-data" method="post" onsubmit="return validateuploadform()" >
+                        <form id="addoffer" action="<%=baseUrl%>AdminUpload.do" name="addoffer" ENCTYPE="multipart/form-data" method="post" onsubmit="return validateuploadform()" >
 						<table class="addprofile">
 							  <tr>
 								<td colspan="2">Offer Details</td>

@@ -1,7 +1,13 @@
+<%@page import="com.noble.admin.utility.StringHelper" %>
+
+<%String baseUrl = StringHelper.getBaseUrl(request);%>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
     <head>
-        <title>Feedback</title>
+        <title>Noble furniture: Feedback</title>
 
         <!-- Contents -->
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -58,46 +64,47 @@
                                             sAlert1 = "Missing value for field ";
                                             sAlert2 = "Wrong email address for field ";
                                             sAlert3 = "Check question is not valid ";
-                                            if (!imCheckForm(1,"Itm_8_00_1",sAlert2 + "\'Senders email address\'",0,"")) return false;
-                                            if (!imCheckForm(0,"Itm_8_00_2",sAlert1 + "\'Subject\'",0,"")) return false;
-                                            if (!imCheckForm(0,"Itm_8_00_3",sAlert1 + "\'Feedback\'",0,"")) return false;
-                                            if (!imCheckForm(6,"Itm_8_00","The inserted check word is not correct!",0,"")) { imShowCaptcha("Itm_8_00"); return false; }
+                                            if (!imCheckForm(1,"mail_email",sAlert2 + "\'Senders email address\'",0,"")) return false;
+                                            if (!imCheckForm(0,"mail_subject",sAlert1 + "\'Subject\'",0,"")) return false;
+                                            if (!imCheckForm(0,"mail_body",sAlert1 + "\'Feedback\'",0,"")) return false;
+                                            //if (!imCheckForm(6,"Itm_8_00","The inserted check word is not correct!",0,"")) { imShowCaptcha("Itm_8_00"); return false; }
                                             return (true);
                                         }
                                         //--></script>
-                                    <form action="files/mail_p004_8_00.php" method="post" onsubmit="return ChkFrm_8_00(this)">
+                                    <form action="<%=baseUrl %>Mail.do" method="post" onsubmit="return ChkFrm_8_00(this)">
                                         <fieldset>
                                             <div class="imLineProp">
-                                                <label for="Itm_8_00_1">
+                                                <label for="mail_email">
                                                     Senders email address*:<br />
-                                                    <input class="imInput imInput_0" type="text" name="Itm_8_00_1" id="Itm_8_00_1" onfocus="imFocus(this,'#FFFFE1')" onblur="imFocus(this,'#FFFFFF')" />
+                                                    <input class="imInput imInput_0" type="text" name="mail_email" id="mail_email" onfocus="imFocus(this,'#FFFFE1')" onblur="imFocus(this,'#FFFFFF')" />
                                                 </label>
                                             </div>
                                             <div class="imLineProp">
-                                                <label for="Itm_8_00_2">
+                                                <label for="mail_subject">
                                                     Subject*:<br />
-                                                    <input class="imInput imInput_0" type="text" name="Itm_8_00_2" id="Itm_8_00_2" onfocus="imFocus(this,'#FFFFE1')" onblur="imFocus(this,'#FFFFFF')" />
+                                                    <input class="imInput imInput_0" type="text" name="mail_subject" id="mail_subject" onfocus="imFocus(this,'#FFFFE1')" onblur="imFocus(this,'#FFFFFF')" />
                                                 </label>
                                             </div>
                                             <div class="imLineProp">
-                                                <label for="Itm_8_00_3">
+                                                <label for="mail_body">
                                                     Feedback*:<br />
-                                                    <textarea class="imInput imInput_0" name="Itm_8_00_3" id="Itm_8_00_3" rows="6" cols="15" style="height: 90px; " onfocus="imFocus(this,'#FFFFE1')" onblur="imFocus(this,'#FFFFFF')"></textarea>
+                                                    <textarea class="imInput imInput_0" name="mail_body" id="mail_body" rows="6" cols="15" style="height: 90px; " onfocus="imFocus(this,'#FFFFE1')" onblur="imFocus(this,'#FFFFFF')"></textarea>
                                                 </label>
                                             </div>
-                                            <div class="imLineProp">
+                                            <!--div class="imLineProp">
                                                 <label for="Itm_8_00_cpv">
                                                     Enter the letters showed into the following image*:<br /><div class="imAlign_center"><iframe id="Itm_8_00_cpn" src="" frameborder="0" marginwidth="0" marginheight="0" width="120" height="24" scrolling="no" style="margin: 4px; border: 1px solid #BBBBBB"></iframe><br /><input class="imInput" type="text" name="Itm_8_00_cpv" id="Itm_8_00_cpv" value="" maxlength="5" style="width: 120px; margin-bottom: 4px;" />
                                                         <input type="hidden" name="Itm_8_00_cpf" id="Itm_8_00_cpf" value="" />
                                                         <script type="text/javascript">imShowCaptcha("Itm_8_00");</script>
                                                     </div>
                                                 </label>
-                                            </div>
+                                            </div-->
                                             <div class="imAlign_center">
                                                 <input class="imFormButton" type="submit" value=" Send " />
                                                 <input class="imFormButton" type="reset" value=" Reset " />
                                             </div>
                                         </fieldset>
+                                        <input type="hidden" name="method" value="feedback">
                                     </form>
 
                                 </div>

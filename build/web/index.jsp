@@ -1,11 +1,28 @@
+<%@page import="java.util.ArrayList" %>
+<%@page import="com.noble.admin.modal.*" %>
+<%@page import="com.noble.admin.utility.StringHelper" %>
 
 <%
-Object products = session.getAttribute("products");
-Object priceranges  = session.getAttribute("priceranges");
-%>
+
+        ArrayList priceranges  = (ArrayList)session.getAttribute("priceranges");
+        ArrayList categories   =(ArrayList)session.getAttribute("categories");
+        String offer = (String)session.getAttribute("offer");
+        
+        int numCategory=0 , numRange=0 ;
+
+        if(categories!=null) numCategory = categories.size();
+        if(priceranges!=null) numRange = priceranges.size();
+
+        if(offer==null||(offer.trim()).equalsIgnoreCase("")) offer = "NOBLE_FURNITURE_14JULY.pdf";
 
 
-<%if((products==null||priceranges==null)&&session.getAttribute("reloaded")==null){
+        IntPair range = null;
+        IntStringPair category = null;
+
+        String baseUrl = StringHelper.getBaseUrl(request);
+
+
+if((categories==null||priceranges==null)&&session.getAttribute("reloaded")==null){
 %>
 <jsp:forward page="Product.do?method=reloadproducts" />
 <%}%>
@@ -13,7 +30,7 @@ Object priceranges  = session.getAttribute("priceranges");
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
     <head>
-        <title>Noble furnitures</title>
+        <title>Noble furniture</title>
 
         <!-- Contents -->
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -86,7 +103,7 @@ Object priceranges  = session.getAttribute("priceranges");
                         <div id="imCel0_01">
                             <div id="imCel0_01_Cont">
                                 <div id="imObj0_01">
-                                    <p class="imAlign_left"><span class="ff2 fc0 fs10 ">We are a one stop destination for all your furniture needs displaying a wide spectrum of products including Bedroom Sets, Sofa Sets, Wall Units, Dining Sets and an array of Furniture Accessories.<br /><br />Nobel furniture offers quality Furniture at Honest Value for Money prices in an ambience that facilitates hassle free shopping backed up by our team of customer associates and carpenters offering prompt after sales service. </span><span class="ff1 fc0 fs10 ">
+                                    <p class="imAlign_left"><span class="ff2 fc0 fs10 ">We are a one stop destination for all your furniture needs displaying a wide spectrum of products including Bedroom Sets, Sofa Sets, Wall Units, Dining Sets and an array of Furniture Accessories.<br /><br />Noble furniture offers quality Furniture at Honest Value for Money prices in an ambience that facilitates hassle free shopping backed up by our team of customer associates and carpenters offering prompt after sales service. </span><span class="ff1 fc0 fs10 ">
                                     <br /></span></p>
                                 </div>
                             </div>
@@ -97,7 +114,19 @@ Object priceranges  = session.getAttribute("priceranges");
                                 <div id="imObj0_00">
                                     <p class="imAlign_left"><span class="ff0 fc0 fs16 fb ">Categories</span><span class="ff0 fc0 fs12 ">
                                     <br /><br /></span></p>
-                                    <ul class="imBullet"><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="bed_room_complete_sets.html" title=""> Bedroom complete sets </a></span></li><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="tv_stereo_units.html" title=""> TV Stereo Units </a></span></li><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="chests.html" title=""> Living room sets</a></span></li><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="chests.html" title=""> Dining room sets</a></span></li><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="chests.html" title=""> Armoire</a></span></li><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="chests.html" title=""> Chest </a></span></li><li class="imAlign_left"><span class="ff5 fc2 fs10 "><a class="ImLink" href="chests.html" title=""> Accents</a></span></li></ul>
+                                    <ul class="imBullet">
+                                        
+                                       <% for(int i=0; i < numCategory;i++){
+                                        category = (IntStringPair)categories.get(i);
+                                        %>
+                                        <!--li class="imMenuSubCur">upto 100 <span class="imHidden"> &larr;</span></li-->
+                                        <li class="imAlign_left"><span class="ff5 fc2 fs10 ">
+                                            <a  class="ImLink" href="<%=baseUrl %>Product.do?method=bycategory&categoryId=<%=category.getId() %>&categoryIdName=<%=category.getValue()%>" title=""><%=category.getValue()%></a></span></li>
+                                        <%}%>
+
+                                   </ul>
+                                    
+
                                 </div>
                             </div>
                         </div>
@@ -106,8 +135,8 @@ Object priceranges  = session.getAttribute("priceranges");
                             <div id="imCel0_03_Cont">
                                 <div id="imObj0_03">
                                     <p class="imAlign_left"><span class="ff2 fc0 fs16 fb ">Welcome</span><span class="ff2 fc0 fs10 ">
-                                    <br /><br /></span><span class="ff2 fc2 fs10 ">Nobel furnitures welcome you to unique shopping experience with us.<br /><br />Formally began operations in 1995 , the main purpose of opening the store is to provide our customers affordable and customized furniture as per their taste.<br /></span></p>
-                                    <p class="imAlign_right"><span class="ff2 fc2 fs10 "><a class="ImLink" href="about_us.html" title=""> Read more</a></span><span class="ff3 fc0 fs22 fb ">
+                                    <br /><br /></span><span class="ff2 fc2 fs10 ">noble furniture welcome you to unique shopping experience with us.<br /><br />Formally began operations in 1995 , the main purpose of opening the store is to provide our customers affordable and customized furniture as per their taste.<br /></span></p>
+                                    <p class="imAlign_right"><span class="ff2 fc2 fs10 "><a class="ImLink" href="about_us.jsp" title=""> Read more</a></span><span class="ff3 fc0 fs22 fb ">
                                     <br /></span></p>
                                     <p class="imAlign_left"><span class="ff1 fc0 fs10 ">
                                     <br /></span></p>
@@ -117,27 +146,14 @@ Object priceranges  = session.getAttribute("priceranges");
 
                         <div id="imCel5_00">
                             <div id="imCel5_00_Cont">
-                                <div id="imObj5_00">
-                                    <div class="imFGPanel">
-                                        <img src="res/imarrl.gif" class="imFGArrowL" onclick="imFGMove(0,25,2,2)" onmouseover="imFGMove(0,8,2,0)" onmouseout="imFGMove(0,8,2,1)" width="22" height="47" alt="" />
-                                        <div id="imFGImgCont_0">
-                                            <div id="imFGImgList_0" style="left: 0; top: 0; ">
-                                                <img class="imImagePNG" src="imagebrowser/home_0_1.png" width="67" height="67" alt="" id="imFGItem_0_1" onclick="imFGShow(0,'ib_home_0_1.jpg',151,126,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_2.png" width="67" height="67" alt="" id="imFGItem_0_2" onclick="imFGShow(0,'ib_home_0_2.jpg',151,118,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_3.png" width="67" height="67" alt="" id="imFGItem_0_3" onclick="imFGShow(0,'ib_home_0_3.jpg',151,141,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_4.png" width="67" height="67" alt="" id="imFGItem_0_4" onclick="imFGShow(0,'ib_home_0_4.jpg',151,119,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_5.png" width="67" height="67" alt="" id="imFGItem_0_5" onclick="imFGShow(0,'ib_home_0_5.jpg',151,85,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_6.png" width="67" height="67" alt="" id="imFGItem_0_6" onclick="imFGShow(0,'ib_home_0_6.jpg',151,145,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_7.png" width="67" height="67" alt="" id="imFGItem_0_7" onclick="imFGShow(0,'ib_home_0_7.jpg',151,143,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_8.png" width="67" height="67" alt="" id="imFGItem_0_8" onclick="imFGShow(0,'ib_home_0_8.jpg',102,201,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_9.png" width="67" height="67" alt="" id="imFGItem_0_9" onclick="imFGShow(0,'ib_home_0_9.jpg',115,201,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_10.png" width="67" height="67" alt="" id="imFGItem_0_10" onclick="imFGShow(0,'ib_home_0_10.jpg',104,201,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_11.png" width="67" height="67" alt="" id="imFGItem_0_11" onclick="imFGShow(0,'ib_home_0_11.jpg',104,201,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_12.png" width="67" height="67" alt="" id="imFGItem_0_12" onclick="imFGShow(0,'ib_home_0_12.jpg',114,201,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_13.png" width="67" height="67" alt="" id="imFGItem_0_13" onclick="imFGShow(0,'ib_home_0_13.jpg',123,201,'','#',1)" /><img class="imImagePNG" src="imagebrowser/home_0_14.png" width="67" height="67" alt="" id="imFGItem_0_14" onclick="imFGShow(0,'ib_home_0_14.jpg',104,201,'','#',1)" />
-                                            </div>
-                                        </div>
-                                        <img src="res/imarrr.gif" class="imFGArrowR" onclick="imFGMove(0,25,1,2)" onmouseover="imFGMove(0,8,1,0)" onmouseout="imFGMove(0,8,1,1)" width="22" height="47" alt="" />
-                                    </div>
-                                    <div id="imFGMain_0" onmouseover="imFGDescrHide(0);" onmouseout="imFGDescrShow(0);">
-                                        <div id="imFGImage_0_cont">
-                                            <img id="imFGImage_0" src="" style="display: none; "/>
-                                            <img id="imFGImage_0_back" src="" style="display: none; "/>
-                                        </div>
-                                        <div id="imFGDescr_0" style="display: none; bottom: 0;"><div id="imFGDescr_0_content"><div id="imFGDescr_0_bg"></div><div id="imFGDescr_0_text"></div></div></div>
-                                    </div>
-                                    <script type="text/javascript">
-                                        imLoadList += "imFGShow(0,'ib_home_0_1.jpg',151,126,'','#',1);";
-                                    </script>
-                                    <noscript><div class="imError">This object require JavaScript enabled</div></noscript>
+                                <div id="imObj5_00" style="text-align:center;">
+                                    
+                                    <br><br><br><br><br><br>
+                                        
+                                   <div style="font-size:4em; ">
+                                       <a href="<%=baseUrl %>files/<%=offer%>" target="_blank" style="text-decoration:none;color:brown;">
+                                           <img src="res/Door_in.gif" style="border-style:none"><br>Download current Offers</a>
+                                   </div>
 
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-#imCel0_00 {position: absolute; top: 0px; left: 10px; height: 117px; width: 756px; }
+#imCel0_00 {position: absolute; top: 0px; left: 10px; height: 117px; width: 373px; }
 #imObj0_00 .ff0 {font-family: Times New Roman; }
 #imObj0_00 .ff1 {font-family: Tahoma; }
 #imObj0_00 .fc1 {color: #FFFFFF; }
@@ -6,9 +6,21 @@
 #imObj0_00 .fs10 {font-size: 13px ; vertical-align: baseline; line-height: 16px ; }
 #imObj0_00 {padding: 0px; }
 #imCel0_00_Cont {text-align: center; height: 117px; overflow: hidden; }
-#imCel7_00 {position: absolute; top: 127px; left: 10px; height: 400px; width: 756px; }
+#imCel0_01 {position: absolute; top: 0px; left: 393px; height: 117px; width: 373px; }
+#imObj0_01 .ff0 {font-family: Times New Roman; }
+#imObj0_01 .ff1 {font-family: Tahoma; }
+#imObj0_01 .fc1 {color: #FFFFFF; }
+#imObj0_01 .fc2 {color: #000000; }
+#imObj0_01 .fs10 {font-size: 13px ; vertical-align: baseline; line-height: 16px ; }
+#imObj0_01 {padding: 0px; }
+#imCel0_01_Cont {text-align: center; height: 117px; overflow: hidden; }
+#imCel7_00 {position: absolute; top: 127px; left: 10px; height: 400px; width: 373px; }
 #imObj7_00 {font: 11px Arial; }
 #imObj7_00 {padding: 0px; }
-#imCel7_00_Cont {text-align: center; height: 400px; width: 756px; overflow: auto; }
+#imCel7_00_Cont {text-align: center; height: 400px; width: 373px; overflow: auto; }
+#imCel7_01 {position: absolute; top: 127px; left: 393px; height: 400px; width: 373px; }
+#imObj7_01 {font: 11px Arial; }
+#imObj7_01 {padding: 0px; }
+#imCel7_01_Cont {text-align: left; height: 400px; width: 373px; overflow: auto; }
 #imPage {position: relative; height: 537px; }
 
